@@ -24,6 +24,8 @@ document.getElementById("transaction-form").addEventListener("submit", function(
     const date = document.getElementById("date-input").value;
     const type = document.querySelector('input[name="type-input"]:checked').value;
 
+    let accountBalance = 1;
+
     if (type === '2' && value > accountBalance) {
         alert('Atenção: A conta ficará no negativo!');
         return; 
@@ -97,5 +99,5 @@ function getTransactions() {
 }
 
 function saveData(data) {
-    localStorage.setItem(data.login, JSON.stringify(data));
+    localStorage.setItem(data.logged, JSON.stringify(data));
 }
