@@ -39,6 +39,7 @@ document.getElementById("create-form").addEventListener("submit", function(e) {
 
     const email = document.getElementById("email-create-input").value;
     const password = document.getElementById("password-create-input").value;
+    const confirmPassword = document.getElementById("confirm-password-input").value;
 
     if (email.length < 5) {
         alert("Digite um email válido.");
@@ -47,6 +48,11 @@ document.getElementById("create-form").addEventListener("submit", function(e) {
 
     if (password.length < 4) {
         alert("Senha precisa ter no mínimo 4 caracteres.");
+        return;
+    }
+
+    if (password !== confirmPassword) {
+        alert("As senhas não coincidem. Por favor, digite a mesma senha nos dois campos.");
         return;
     }
 
